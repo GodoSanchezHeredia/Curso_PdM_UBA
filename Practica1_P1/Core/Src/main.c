@@ -54,6 +54,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+//Guardando los cambios desde Git
 uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
 uint16_t Pin[3] = {LED1_Pin,LED2_Pin,LED3_Pin};
 /* USER CODE END 0 */
