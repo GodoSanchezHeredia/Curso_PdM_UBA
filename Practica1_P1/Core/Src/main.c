@@ -57,6 +57,7 @@ void SystemClock_Config(void);
 //Guardando los cambios desde Git
 uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
 uint16_t Pin[3] = {LED1_Pin,LED2_Pin,LED3_Pin};
+uint32_t time = 200;//Time
 /* USER CODE END 0 */
 
 /**
@@ -97,9 +98,9 @@ int main(void)
   {
 	for (uint8_t var = 0; var < 3; ++var) {
 		HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_SET);
-		HAL_Delay(200);
+		HAL_Delay(time);
 		HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_RESET);
-		HAL_Delay(200);
+		HAL_Delay(time);
 	}
     /* USER CODE END WHILE */
 

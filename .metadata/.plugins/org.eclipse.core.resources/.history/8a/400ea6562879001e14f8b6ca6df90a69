@@ -54,10 +54,9 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+//Guardando los cambios desde Git
 uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
 uint16_t Pin[3] = {LED1_Pin,LED2_Pin,LED3_Pin};
-extern volatile uint8_t Counter;
-uint32_t time = 200;//Time
 /* USER CODE END 0 */
 
 /**
@@ -96,31 +95,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-
-	  switch (Counter) {
-		case 1:
-			for (uint8_t var = 0; var < 3; ++var) {
-				HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_SET);
-				HAL_Delay(time);
-				HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_RESET);
-				HAL_Delay(time);
-			}
-			break;
-		case 2:
-
-			for (uint8_t var1 = 3; var1 > 0; --var1) {
-				HAL_GPIO_WritePin(Port[var1-1], Pin[var1-1],GPIO_PIN_SET);
-				HAL_Delay(time);
-				HAL_GPIO_WritePin(Port[var1-1], Pin[var1-1],GPIO_PIN_RESET);
-				HAL_Delay(time);
-			}
-
-			break;
-		default:
-			break;
+	for (uint8_t var = 0; var < 3; ++var) {
+		HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_SET);
+		HAL_Delay(200);
+		HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_RESET);
+		HAL_Delay(200);
 	}
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
