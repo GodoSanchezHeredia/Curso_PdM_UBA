@@ -580,3 +580,7 @@
 2023-11-01 19:20:03,159 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
 2023-11-01 19:20:03,160 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
 2023-11-01 19:28:47,593 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2023-11-01 20:27:33,673 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2023-11-01 20:27:35,730 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2023-11-01 20:27:37,764 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2023-11-01 20:27:38,832 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
