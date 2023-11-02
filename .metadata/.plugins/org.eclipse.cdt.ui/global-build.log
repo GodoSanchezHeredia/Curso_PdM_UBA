@@ -1,0 +1,107 @@
+19:29:21 **** Incremental Build of configuration Debug for project Practica1_P1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:146,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:29,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32f4xx_hal_conf.h:275,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h:779:29: warning: initialization of 'long unsigned int' from 'GPIO_TypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  779 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                             ^
+../Core/Inc/main.h:61:24: note: in expansion of macro 'GPIOA'
+   61 | #define LED1_GPIO_Port GPIOA
+      |                        ^~~~~
+../Core/Src/main.c:57:21: note: in expansion of macro 'LED1_GPIO_Port'
+   57 | uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
+      |                     ^~~~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h:779:29: note: (near initialization for 'Port[0]')
+  779 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                             ^
+../Core/Inc/main.h:61:24: note: in expansion of macro 'GPIOA'
+   61 | #define LED1_GPIO_Port GPIOA
+      |                        ^~~~~
+../Core/Src/main.c:57:21: note: in expansion of macro 'LED1_GPIO_Port'
+   57 | uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
+      |                     ^~~~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h:779:29: warning: initialization of 'long unsigned int' from 'GPIO_TypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  779 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                             ^
+../Core/Inc/main.h:63:24: note: in expansion of macro 'GPIOA'
+   63 | #define LED2_GPIO_Port GPIOA
+      |                        ^~~~~
+../Core/Src/main.c:57:36: note: in expansion of macro 'LED2_GPIO_Port'
+   57 | uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
+      |                                    ^~~~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h:779:29: note: (near initialization for 'Port[1]')
+  779 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                             ^
+../Core/Inc/main.h:63:24: note: in expansion of macro 'GPIOA'
+   63 | #define LED2_GPIO_Port GPIOA
+      |                        ^~~~~
+../Core/Src/main.c:57:36: note: in expansion of macro 'LED2_GPIO_Port'
+   57 | uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
+      |                                    ^~~~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h:779:29: warning: initialization of 'long unsigned int' from 'GPIO_TypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  779 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                             ^
+../Core/Inc/main.h:65:24: note: in expansion of macro 'GPIOA'
+   65 | #define LED3_GPIO_Port GPIOA
+      |                        ^~~~~
+../Core/Src/main.c:57:51: note: in expansion of macro 'LED3_GPIO_Port'
+   57 | uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
+      |                                                   ^~~~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h:779:29: note: (near initialization for 'Port[2]')
+  779 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                             ^
+../Core/Inc/main.h:65:24: note: in expansion of macro 'GPIOA'
+   65 | #define LED3_GPIO_Port GPIOA
+      |                        ^~~~~
+../Core/Src/main.c:57:51: note: in expansion of macro 'LED3_GPIO_Port'
+   57 | uint32_t Port[3] = {LED1_GPIO_Port,LED2_GPIO_Port,LED3_GPIO_Port};
+      |                                                   ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:98:39: warning: passing argument 1 of 'HAL_GPIO_WritePin' makes pointer from integer without a cast [-Wint-conversion]
+   98 |                 HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_SET);
+      |                                   ~~~~^~~~~
+      |                                       |
+      |                                       uint32_t {aka long unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:279,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:235:38: note: expected 'GPIO_TypeDef *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+  235 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                        ~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:100:39: warning: passing argument 1 of 'HAL_GPIO_WritePin' makes pointer from integer without a cast [-Wint-conversion]
+  100 |                 HAL_GPIO_WritePin(Port[var], Pin[var],GPIO_PIN_RESET);
+      |                                   ~~~~^~~~~
+      |                                       |
+      |                                       uint32_t {aka long unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:279,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:235:38: note: expected 'GPIO_TypeDef *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+  235 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                        ~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Practica1_P1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/godo/Documentos/GitHub/Curso_PdM_UBA/Practica1_P1/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica1_P1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica1_P1.elf
+ 
+arm-none-eabi-size   Practica1_P1.elf 
+arm-none-eabi-objdump -h -S  Practica1_P1.elf  > "Practica1_P1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5776	     40	   1568	   7384	   1cd8	Practica1_P1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica1_P1.list
+ 
+19:29:52 **** Incremental Build of configuration Debug for project Practica1_P1 ****
+make -j4 all 
+arm-none-eabi-size   Practica1_P1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5776	     40	   1568	   7384	   1cd8	Practica1_P1.elf
+Finished building: default.size.stdout
+ 
